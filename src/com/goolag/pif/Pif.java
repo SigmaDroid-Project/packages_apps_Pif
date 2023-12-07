@@ -13,7 +13,7 @@ import androidx.preference.Preference;
 import androidx.preference.PreferenceFragment;
 import androidx.preference.PreferenceManager;
 
-import com.android.internal.util.evolution.PixelPropsUtils;
+import com.android.internal.util.PropImitationHooks;
 
 import com.goolag.pif.R;
 
@@ -57,7 +57,7 @@ public class Pif extends PreferenceFragment
 
         mProductPreference.setSummary(selectedDeviceProps[0]);
         mDevicePreference.setSummary(selectedDeviceProps[1].isEmpty() ?
-                PixelPropsUtils.getDeviceName(selectedDeviceProps[5]) : selectedDeviceProps[1]);
+                PropImitationHooks.getDeviceName(selectedDeviceProps[5]) : selectedDeviceProps[1]);
         mManufacturerPreference.setSummary(selectedDeviceProps[2]);
         mBrandPreference.setSummary(selectedDeviceProps[3]);
         mModelPreference.setSummary(selectedDeviceProps[4]);
@@ -65,7 +65,7 @@ public class Pif extends PreferenceFragment
         mSecurityPatchPreference.setSummary(selectedDeviceProps[6]);
         mFirstAPILevelPreference.setSummary(selectedDeviceProps[7]);
         mIDPreference.setSummary(selectedDeviceProps[8].isEmpty() ?
-                PixelPropsUtils.getBuildID(selectedDeviceProps[5]) : selectedDeviceProps[8]);
+                PropImitationHooks.getBuildID(selectedDeviceProps[5]) : selectedDeviceProps[8]);
         mTypePreference.setSummary(selectedDeviceProps[9].isEmpty() ? "user" : selectedDeviceProps[9]);
         mTAGSPreference.setSummary(selectedDeviceProps[10].isEmpty() ? "release-keys" : selectedDeviceProps[10]);
     }
